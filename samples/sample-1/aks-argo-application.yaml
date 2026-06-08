@@ -1,52 +1,52 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-name: ""
-namespace: argocd
+  name: ""
+  namespace: argocd
 spec:
-project: default
-destination:
-namespace: default
-server: https://kubernetes.default.svc
-source:
-repoURL: 'https://mboersma.github.io/cluster-api-charts'
-chart: azure-aks-aso
-targetRevision: v
-helm:
-valuesObject:
-clusterName: ""
-location: ""
-subscriptionID: ""
-clientID: ""
-tenantID: ""
-authMode: "workloadidentity"
-kubernetesVersion: v
-clusterNetwork: "overlay"
-withClusterClass: true
-withClusterTopology: true
-managedMachinePoolSpecs:
-pool0:
-count: 1
-enableAutoScaling: true
-enableEncryptionAtHost: false
-enableFIPS: false
-enableNodePublicIP: false
-enableUltraSSD: false
-maxCount: 3
-minCount: 1
-mode: System
-osSKU: AzureLinux
-vmSize: Standard_DS2_v2
-type: VirtualMachineScaleSets
-syncPolicy:
-automated:
-prune: true
-selfHeal: true
-syncOptions:
-- CreateNamespace=true
-retry:
-limit: -1
-backoff:
-duration: 5s
-factor: 2
-maxDuration: 10m
+  project: default
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: 'https://mboersma.github.io/cluster-api-charts'
+    chart: azure-aks-aso
+    targetRevision: v
+    helm:
+      valuesObject:
+        clusterName: ""
+        location: ""
+        subscriptionID: ""
+        clientID: ""
+        tenantID: ""
+        authMode: "workloadidentity"
+        kubernetesVersion: v
+        clusterNetwork: "overlay"
+        withClusterClass: true
+        withClusterTopology: true
+        managedMachinePoolSpecs:
+          pool0:
+            count: 1
+            enableAutoScaling: true
+            enableEncryptionAtHost: false
+            enableFIPS: false
+            enableNodePublicIP: false
+            enableUltraSSD: false
+            maxCount: 3
+            minCount: 1
+            mode: System
+            osSKU: AzureLinux
+            vmSize: Standard_DS2_v2
+            type: VirtualMachineScaleSets
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: -1
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 10m
