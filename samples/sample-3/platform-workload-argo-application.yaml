@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-3-platform-workload
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "30"
+spec:
+  project: default
+  destination:
+    namespace: sample-3-demo
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/oreakinodidi98/app-project-env.git
+    targetRevision: main
+    path: apps/sample-3-workload
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
