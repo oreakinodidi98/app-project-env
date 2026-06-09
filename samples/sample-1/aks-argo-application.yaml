@@ -1,6 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    demo.last-refresh: '2026-06-09T12-42-14'
   name: "dev-cluster-199624066"
   namespace: argocd
 spec:
@@ -50,3 +52,4 @@ spec:
         duration: 5s
         factor: 2
         maxDuration: 10m
+
