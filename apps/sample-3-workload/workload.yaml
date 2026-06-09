@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: nginx:1.27
+        image: nginx:not-a-real-tag
         ports:
         - containerPort: 80
 ---
