@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: 'https://mboersma.github.io/cluster-api-charts'
     chart: azure-aks-aso
-    targetRevision: v0.4.3
+    targetRevision: v0.4.2
     helm:
       valuesObject:
         clusterName: "dev-cluster-199624066"
@@ -52,4 +52,5 @@ spec:
         duration: 5s
         factor: 2
         maxDuration: 10m
+
 
