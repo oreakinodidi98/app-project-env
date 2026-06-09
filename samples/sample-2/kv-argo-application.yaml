@@ -6,28 +6,28 @@ metadata:
   annotations:
     serviceoperator.azure.com/credential-from: rg-dev-app-aso-credentials
 spec:
-  location: 
+  location: swedencentral
 ---
 apiVersion: keyvault.azure.com/v1api20210401preview
 kind: Vault
 metadata:
-  name: app-keyvault-
+  name: app-keyvault-199624066
   namespace: rg-dev-app
   annotations:
     serviceoperator.azure.com/credential-from: rg-dev-app-aso-credentials
 spec:
-  location: 
+  location: swedencentral
   owner:
     name: rg-dev-app
     kind: ResourceGroup
   properties:
-    tenantId: 
+    tenantId: 16b3c013-d300-468d-ac64-7eda0820b6d3
     sku:
       family: "A"
       name: "standard"
     accessPolicies:
-      - tenantId: 
-        objectId:   # User or Service Principal Object ID
+      - tenantId: 16b3c013-d300-468d-ac64-7eda0820b6d3
+        objectId: 0b721d88-5586-4765-83ce-e609a355c644
         permissions:
           secrets:
             - get
