@@ -5,6 +5,7 @@ metadata:
   namespace: rg-dev-app
   annotations:
     serviceoperator.azure.com/credential-from: rg-dev-app-aso-credentials
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
   location: swedencentral
 ---
@@ -15,6 +16,7 @@ metadata:
   namespace: rg-dev-app
   annotations:
     serviceoperator.azure.com/credential-from: rg-dev-app-aso-credentials
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
   location: swedencentral
   owner:
@@ -34,3 +36,4 @@ spec:
             - list
             - set
     enableSoftDelete: true
+
